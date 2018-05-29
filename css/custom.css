@@ -1,0 +1,32 @@
+@font-face {
+	font-family: Avenir;
+	src: url('../fonts/Averni-Light-07.ttf');
+	font-family: Comfortaa;
+	src: url('../fonts/Comfortaa-Regular.ttf');
+}
+
+:root {
+	--background-color: #fbfcfc;
+	--blue-color: #6495ed;
+	--light-grey-color: #9d9d9c;
+	--dark-grey-color: #878787;
+	--panels-color: #fbfcfc;
+}
+
+body {
+	font-family: Avenir;
+	background-color: var(--background-color);
+}
+
+.navbar {
+	padding: 5%;
+	background-color: var(--background-color);
+	font-family: Comfortaa;
+}
+
+.navbar .nav-item:hover {
+	background-color: var(--blue-color);
+}
+.navbar .nav-item.active a {
+	background-color: var(--dark-grey-color);
+}
