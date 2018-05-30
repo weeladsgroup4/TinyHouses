@@ -52,16 +52,43 @@ p {
 }
 
 .navbar .nav-item:hover {
-	background-color: var(--dark-grey-color);
-}
-.navbar .nav-item.active {
 	background-color: var(--blue-color);
 }
 
-#details-button {
-	background-color: var(--blue-color);
+.navbar .nav-item:hover .fa {
+	color: var(--blue-color);
+}
+
+.icon-item {
+	font-size: 1.128em;
+	background-color: var(--background-color) !important;
 }
 
 .row-padding {
 	padding: 5% 2%;
 }
+
+.row-divider {
+	padding: 5% 2%;
+}
+
+.lander-col #left {
+	background-color: var(--blue-color);
+}
+.lander-col #right {
+	
+}
+
+#primary-button {
+	background-color: var(--blue-color);
+}
+
+#carousel-image-container {
+	max-height: 100vh;
+	max-width: 50vw;
+}
+
+#account-container {
+	background-color: var(--background-color);
+}
+
