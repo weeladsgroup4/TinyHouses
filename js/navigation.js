@@ -6,9 +6,7 @@ $.get('components/navigation.html', (data) => {
 });
 
 $(document).ready( () => {
-	$('#navigation-container').hide();
 	$('#buyer-segment').on('click', () => {
-		$('#navigation-container').show();
 		$.get('components/account.html', (data) => {
 			$('#content-container').replaceWith(data);
 		})	
@@ -46,7 +44,7 @@ $(document).ready( () => {
 	$('#account-page').on('click', () => {
 		$.get('components/account.html', (data) => {
 			$('#content-container').replaceWith(data);
-		})	
+		})
 	})
 
 	$('#milestone-page').on('click', () => {

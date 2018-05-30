@@ -1,12 +1,16 @@
-$(document).ready(() => {
-   firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
+var isLoggedIn;
+var loggedInUser;
 
+$(document).ready(() => {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      isLoggedIn = true;    
     } else {
       console.log('not logged in');
       $('.account-container').hide();
     }
   }); 
+
 })
 
 function login()
@@ -23,11 +27,6 @@ function login()
     else {
       showAccount(userName);
     }
-    /*
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    window.alert('Error: ' + errorMessage);
-    */
   });
 }
 
@@ -35,6 +34,7 @@ function googleLogin()
 {
   google_provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(google_provider).then(function(result){
+    isLoggedIn = true;
     showAccount(result);
   }).catch(function(err){
     console.log(err);
@@ -53,17 +53,23 @@ function showAccount(result)
 {
   if (result.user.displayName == null)
   {
-    var name = result.user.email;
+    var currentUser = result.user.email;
   }
   else {
-    var name = result.user.displayName;
+    var currentUser = result.user.displayName;
   }
-
-  console.log(result);
-  $('#welcome-text').html('<h1>Hello there ' + name + '!</h1>');
-  $('.login-container').hide();
-  $('.account-container').show();
+  console.log(currentUser);
+  accountViewSwitcher();
+  $('#welcome-text').html('<h4>Hello there ' + currentUser + '!</h4>');
+  return currentUser;
 }
+
+function accountViewSwitcher()
+{
+  $('.login-container').toggle();
+  $('.account-container').toggle();  
+}
+
 function signup()
 {
   var userEmail = document.getElementById('signup-email-field').value;
@@ -80,7 +86,7 @@ function signup()
 function logout()
 {
   firebase.auth().signOut().then(function() {
-    window.alert('Log out successfull');
+    accountViewSwitcher();
   }).catch(function(error) {
     window.alert(error.message);
   });
