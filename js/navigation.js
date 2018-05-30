@@ -42,4 +42,10 @@ $(document).ready( () => {
 			$('#content-container').replaceWith(data);
 		})	
 	})
+
+	$('#milestone-page').on('click', () => {
+		$.get('components/milestone.html', (data) => {
+			$('#content-container').replaceWith(data);
+		})
+	})
 });
