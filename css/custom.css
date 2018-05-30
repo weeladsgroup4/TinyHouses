@@ -47,16 +47,15 @@ p {
 	background-color: var(--background-color);
 	font-family: Comfortaa;
 }
-
-.navbar .nav-item {
+.nav-item {
 	padding: 2%;
 }
 
 .navbar .nav-item:hover {
 	background-color: var(--dark-grey-color);
 }
-.navbar .nav-item.active a {
-	background-color: var(--dark-grey-color);
+.navbar .nav-item.active {
+	background-color: var(--blue-color);
 }
 
 #details-button {
