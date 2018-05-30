@@ -5,7 +5,7 @@
 				<h2>LOG IN</h2>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row button-padding">
 			<div class="col-3">
 			</div>
 			<div class="col-6">
@@ -15,7 +15,7 @@
 			<div class="col-3">
 			</div>
 		</div>
-		<div class="row">
+		<div class="row button-padding">
 			<div class="col-3">
 			</div>
 			<div class="col-6">
@@ -25,7 +25,7 @@
 			<div class="col-3">
 			</div>
 		</div>
-		<div class="row row-padding">
+		<div class="row button-padding">
 			<div class="col-3">
 			</div>
 			<div class="col-6">
@@ -34,10 +34,19 @@
 			<div class="col-3">
 			</div>
 		</div>
-		<div class="row row-padding">
+		<div class="row button-padding">
 			<div class="col-3">
 			</div>
-			<div class="col-6" onclick="showSignUp()">
+			<div class="col-6">
+				<button class="btn btn-block" onclick="googleLogin()" id="primary-button"><i class="fab fa-google text-left"></i>SIGN IN WITH GOOGLE</button>
+			</div>
+			<div class="col-3">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+			</div>
+			<div class="col-6" onclick="switchLoginSignUp()">
 				<p>No account? click here to sign up</p>
 			</div>
 			<div class="col-3">
@@ -50,7 +59,7 @@
 				<h2>SIGN UP</h2>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row button-padding">
 			<div class="col-3">
 			</div>
 			<div class="col-6">
@@ -60,7 +69,7 @@
 			<div class="col-3">
 			</div>
 		</div>
-		<div class="row">
+		<div class="row button-padding">
 			<div class="col-3">
 			</div>
 			<div class="col-6">
@@ -79,11 +88,20 @@
 			<div class="col-3">
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-3">
+			</div>
+			<div class="col-6" onclick="switchLoginSignUp()">
+				<p>Back to login</p>
+			</div>
+			<div class="col-3">
+			</div>
+		</div>
 	</div>
 	<div class="container text-center account-container">
 		<div class="row">
 			<div class="col-10">
-				<h1>LOGIN SUCCESSFUL, THIS IS THE ACCOUNT PAGE</h1>
+				<h1 id="welcome-text"></h1>
 			</div>
 		</div>
 	</div>
