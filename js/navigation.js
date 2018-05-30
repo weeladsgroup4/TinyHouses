@@ -1,26 +1,32 @@
+$.get('components/lander.html', (data) => {
+	$('#content-container').empty().replaceWith(data);
+});
 $.get('components/navigation.html', (data) => {
 	$('#navigation-container').replaceWith(data);
 });
 
-$.get('components/lander.html', (data) => {
-	$('#content-container').empty().replaceWith(data);
-})	
-
 $(document).ready( () => {
-	$('#home-page').on('click', () => {
-		$.get('components/lander.html', (data) => {
+	$('#navigation-container').hide();
+	$('#buyer-segment').on('click', () => {
+		$('#navigation-container').show();
+		$.get('components/account.html', (data) => {
 			$('#content-container').replaceWith(data);
 		})	
 	})
-
-	$('#info-page').on('click', () => {
-		$.get('components/info.html', (data) => {
+	$('#seller-segment').on('click', () => {
+		$('#navigation-container').show();
+		$.get('components/account.html', (data) => {
 			$('#content-container').replaceWith(data);
 		})	
 	})
 
 	$('#search-page').on('click', () => {
 		$.get('components/search.html', (data) => {
+			$('#content-container').replaceWith(data);
+		})	
+	})
+	$('#info-page').on('click', () => {
+		$.get('components/info.html', (data) => {
 			$('#content-container').replaceWith(data);
 		})	
 	})
@@ -49,3 +55,4 @@ $(document).ready( () => {
 		})
 	})
 });
+

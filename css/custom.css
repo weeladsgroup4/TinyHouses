@@ -72,11 +72,23 @@ p {
 	padding: 5% 2%;
 }
 
-.lander-col #left {
+.account-container {
+	background-color: var(--background-color);
+	display: none;
+}
+.signup-container {
+	display: none;
+}
+
+#buyer-segment {
+	margin-top: 25%;
+}
+#buyer-segment:hover, #seller-segment:hover {
 	background-color: var(--blue-color);
 }
-.lander-col #right {
-	
+
+#seller-segment {
+	margin-top: 25%;
 }
 
 #primary-button {
@@ -86,9 +98,5 @@ p {
 #carousel-image-container {
 	max-height: 100vh;
 	max-width: 50vw;
-}
-
-#account-container {
-	background-color: var(--background-color);
 }
 
