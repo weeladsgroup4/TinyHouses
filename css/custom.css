@@ -6,11 +6,11 @@
 }
 
 :root {
-	--background-color: #fbfcfc;
+	--background-color: #e2e2e2;
+	--panel-color: #fbfcfc;
 	--blue-color: #6495ed;
 	--light-grey-color: #9d9d9c;
 	--dark-grey-color: #878787;
-	--panels-color: #fbfcfc;
 }
 
 body {
@@ -42,16 +42,34 @@ p {
 	font-size: 1em;
 }
 
+#content-container {
+
+}
+
 .navbar {
-	padding: 5%;
+	padding: 40% 5% 1% 5%;
+	height: 0vh;
+	background-image: url('https://blog.claytonhomes.com/hubfs/Blog/ClaytonTinyHome_JeffreyDunganCollection_TheLowCountry_039.jpg?t=1527878232226');
+	background-repeat: no-repeat;
 	background-color: var(--background-color);
+	background-size: 100%;
+	background-position: 50% 60%;
 	font-family: Comfortaa;
 }
+
 .nav-item {
-	padding: 2%;
+	padding: -2%;
+}
+
+.nav-item h4 {
+	color: #333;
 }
 
 .navbar .nav-item:hover {
+	background-color: var(--blue-color);
+}
+
+.navbar .nav-item.active {
 	background-color: var(--blue-color);
 }
 
@@ -60,8 +78,9 @@ p {
 }
 
 .icon-item {
-	font-size: 1.128em;
-	background-color: var(--background-color) !important;
+	font-size: 2.25em;
+	opacity: 1;
+	background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .row-padding {
@@ -80,19 +99,64 @@ p {
 	background-color: var(--background-color);
 	display: none;
 }
+
+.account-input-field {
+	width: 90%;
+}
+
+
 .signup-container {
 	display: none;
 }
 
-#buyer-segment {
-	margin-top: 25%;
-}
-#buyer-segment:hover, #seller-segment:hover {
-	background-color: var(--blue-color);
+.slider {
+	-webkit-appearance: none;
+	background-color: #fbfcfc;
+	height: 1em;
+	border-radius: 5px;
+	outline: none;
 }
 
-#seller-segment {
-	margin-top: 25%;
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+	height: 1.625em;
+	width: 1.625em;
+	border-radius: 50%;
+    background: var(--blue-color);
+    cursor: pointer;
+}
+
+.price-slider-container {
+	width: 100%;
+}
+
+.distance-slider-container {
+	width: 100%;
+}
+
+.lander-container {
+	background-image: url('https://www.citylab010.nl/system/proposals/a8/6c/thumbnail/Dakdorpen_Walden_Rotterdam.jpg?1489315136');
+	background-repeat: no-repeat;
+	background-color: var(--background-color);
+	background-size: 100%;
+	height: 100vh;
+	width: 100%;
+	background-position: 50% 50%;
+	font-family: Comfortaa;
+}
+
+.lander-div {
+	position: fixed;
+	left: 25%;
+	top: 15%;
+	right: 50%;
+	width: 50%;
+	background-color: rgba(256, 256, 256, 0.8);
 }
 
 #primary-button {
@@ -103,4 +167,13 @@ p {
 	max-height: 100vh;
 	max-width: 50vw;
 }
+
+#content-container {
+	padding: 5%;
+}
+
+#searchField {
+	width: 80%;
+}
+
 
