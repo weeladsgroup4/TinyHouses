@@ -6,8 +6,8 @@
 }
 
 :root {
-	--background-color: #e2e2e2;
-	--panel-color: #fbfcfc;
+	--background-color: #fbfcfc;
+	--panel-color: #e2e2e2;
 	--blue-color: #6495ed;
 	--light-grey-color: #9d9d9c;
 	--dark-grey-color: #878787;
@@ -111,7 +111,7 @@ p {
 
 .slider {
 	-webkit-appearance: none;
-	background-color: #fbfcfc;
+	background-color: var(--panel-color);
 	height: 1em;
 	border-radius: 5px;
 	outline: none;
