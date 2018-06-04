@@ -7,7 +7,7 @@
 				<div class="col-sm-8">
 					<span>
 						<i class="fa fa-search"/>				
-						<input type="text" placeholder="search here" id="searchField">
+						<input type="text" placeholder="search for city here" id="searchField" onkeyup="">
 						<button id='primary-button' onclick="search()">GO</button>
 					</span>
 				</div>
@@ -23,17 +23,16 @@
 				</div>
 				<div class="col-sm">
 					<h4>
-						PRICE RANGE
+						MAX PRICE RANGE
 					</h4>
 					<div class="price-slider-container">
-					  <input type="range" min="50" max="250" value="100" class="slider" id="priceSlider">
+					  <input type="range" min="50" max="350" value="100" class="slider" id="priceSlider">
 					  <p><span class="fa fa-euro-sign"></span><span id="priceText"></span>,000</p>
 					</div>
 				</div>
 				<div class="col-sm">
 					<h4>
-						<span class="fa fa-map-marker"></span>
-						SIZE
+						MAX SIZE
 					</h4>
 					<div class="distance-slider-container">
 					  <input type="range" min="1" max="250" value="25" class="slider" id="distanceSlider">
@@ -45,48 +44,6 @@
  		<div class="row row-padding search-content-container">
 		</div>	
 	</div>
-	<script>
-		var houseData = '';
-		var priceSlider = document.getElementById("priceSlider");
-		var priceOutput = document.getElementById("priceText");
-		var sizeSlider = document.getElementById("distanceSlider");
-		var sizeOutput = document.getElementById("distanceText");
-		$.getJSON('../wee_mock_data.json', (data) => {
-				houseData = data;
-		});
-		function getHouses(size, price) {
-			for (var i = 0, j = 0; i < 15; i++) {
-				$('.search-content-container').empty();
-				house = houseData[i];
-				if (house.size <= size && house.price <= price) {
-					j++;
-					$('.search-content-container').append(
-							'<div class="col col-sm-4"><img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid img-thumbnail"/><div class="row row-padding"><div class="col-sm-6"><p><span class="fa fa-map-pin"></span>'+house.city+'</p></div><div class="col-sm-6"><p>'+house.longitude + ', ' + house.latitude + '</p></div></div><div class="row row-padding"><div class="col-sm-6"><p><span class="fa fa-euro-sign"></span>'+house.price+'</p></div><div class="col-sm-6"><p>'+house.size+'m<sup>2</sup></p></div></div><div class="row row-padding"><div class="col-sm-12"><button type="button" class="btn btn-primary btn-lg btn-block" id="primary-button">VIEW DETAILS</button></div></div></div>'	
-						);
-					if(j%3 == 0) {
-						$('.search-content-container').append('</div><div class="row row-padding>');
-					}					
-				} else {
-					i++;
-				}
-			}
-		}
-		priceOutput.innerHTML = priceSlider.value;
-		sizeOutput.innerHTML = sizeSlider.value;
-
-		priceSlider.oninput = function() {
-			priceOutput.innerHTML = this.value;
-		}
-
-		distanceSlider.oninput = function() {
-			sizeOutput.innerHTML = this.value;
-		}	
-
-		function search() {
-			size = sizeSlider.value;
-			price = priceSlider.value * 1000;
-			getHouses(size, price);
-			console.log('searched for distance: ' + sizeSlider.value + ', and price: ' + priceSlider.value);
-		}	
+	<script src="js/search.js">
 	</script>
 </div>
