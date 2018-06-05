@@ -160,6 +160,9 @@ p {
 }
 
 #primary-button {
+	background-color: var(--dark-grey-color);
+}
+#primary-button:hover {
 	background-color: var(--blue-color);
 }
 
