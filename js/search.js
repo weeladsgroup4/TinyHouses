@@ -6,7 +6,7 @@ var sizeOutput = document.getElementById("distanceText");
 var cityOnly = false;
 
 $(document).ready(()=> {
-	$.getJSON('../wee_mock_data.json', (data) => {
+	$.getJSON('assets/wee_mock_data.json', (data) => {
 		houseData = data;
 		for (var i = 0; i < houseData.length; i++) {
 			populateResults(houseData[i], i);
