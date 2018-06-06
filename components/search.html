@@ -7,31 +7,28 @@
 				<div class="col-sm-8">
 					<span>
 						<i class="fa fa-search"/>				
-						<input type="text" placeholder="search for city here" id="searchField" onkeyup="">
-						<button id='primary-button' onclick="search()">GO</button>
+						<input type="text" placeholder="search for city here" id="searchField">
+						<button id='search-button' onclick="search()">GO</button>
 					</span>
 				</div>
 				<div class="col-sm-2">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm">
+				<div class="col-sm-4">
+				</div>
+				<div class="col-sm-4 text-center">
 					<h4>
-						Only search by city
+						ONLY SEARCH BY CITY NAME
 						<input type='checkbox' id="cityOnly">
 					</h4>
 				</div>
-				<div class="col-sm">
-					<h4>
-					</h4>
+				<div class="col-sm-4">
 				</div>
 			</div>
-			<div class="row row-padding">
-				<div class="col-sm">
-					<h4>
-						<span class="fa fa-bars"></span>
-						MORE FILTER OPTIONS
-					</h4>
+			<div class="row row-padding options-container">
+				<div class="col-sm filter-options-selector">
+					<button class="btn btn-lg btn-block" id="search-button"><h4>SHOW MORE OPTIONS</h4></button>
 				</div>
 				<div class="col-sm" id="price-container">
 					<h4>
@@ -52,8 +49,25 @@
 					</div>	
 				</div>
 			</div>
+			<div class="row filter-options options-container">
+				<div class="col-sm-2">
+				</div>
+				<div class="col-sm-4" id="innercity-toggle">
+					<button class="btn btn-lg btn-block" id="search-button">
+						<p>INCLUDE INNER CITY</p>
+					</button>
+				</div>
+				<div class="col-sm-4" id="outercity-toggle">
+					<button class="btn btn-lg btn-block" id="search-button">	
+						<p>INCLUDE OUTER CITY</p>
+					</button>
+				</div>
+				<div class="col-sm-2">
+				</div>
+			</div>
  		</div>
  		<div class="row row-padding search-content-container">
+
 		</div>	
 	</div>
 	<script src="js/search.js">

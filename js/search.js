@@ -3,7 +3,7 @@ var priceSlider = document.getElementById("priceSlider");
 var priceOutput = document.getElementById("priceText");
 var sizeSlider = document.getElementById("distanceSlider");
 var sizeOutput = document.getElementById("distanceText");
-var cityOnly = false;
+var cityOnly, innerCity, outerCity, showOptions = false;
 
 $(document).ready(()=> {
 	$.getJSON('assets/wee_mock_data.json', (data) => {
@@ -12,15 +12,45 @@ $(document).ready(()=> {
 			populateResults(houseData[i], i);
 		}
 	});
+	$('.filter-options').hide();
 	$('input[type=checkbox]').on("click", ()=>{
 		if (cityOnly) {
 			cityOnly = false;
-		} 
-		else {
+		}  else {
 			cityOnly = true;
 		}
-		$('#price-container').children().toggle();
-		$('#size-container').children().toggle();
+		$('.options-container').children().toggle();
+	});
+
+	$('.filter-options-selector').on('click', () => {
+		if(showOptions) {
+			showOptions = false;
+			$('.filter-options-selector').html('<button class="btn btn-lg btn-block" id="search-button"><h4>SHOW MORE OPTIONS</h4></button>');
+		} else {
+			showOptions = true;
+			$('.filter-options-selector').html('<button class="btn btn-lg btn-block" id="search-button"><h4>HIDE MORE OPTIONS</h4></button>');
+		}
+		$('.filter-options').toggle();
+	});
+
+	$('#innercity-toggle').on('click', () => {
+		if(innerCity) {
+			innerCity = false;
+			$('#innercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>INCLUDE INNER CITY HOUSES</p></button>');
+		} else {
+			innerCity = true;
+			$('#innercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>EXCLUDE INNER CITY HOUSES</p></button>');
+		}
+	});
+
+	$('#outercity-toggle').on('click', () => {
+		if(outerCity) {
+			outerCity = false;
+			$('#outercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>INCLUDE OUTER CITY HOUSES</p></button>');
+		} else {
+			outerCity = true;
+			$('#outercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>EXCLUDE OUTER CITY HOUSES</p></button>');
+		}
 	});
 
 	document.addEventListener('keydown', function(event) {
@@ -40,7 +70,8 @@ priceSlider.oninput = function() {
 distanceSlider.oninput = function() {
 	sizeOutput.innerHTML = this.value;
 }	
-
+// type = false --innercity
+// type = true --outercity
 function getHouses(size, price, location) {
 	$('.search-content-container').empty();
 	for (var i = 0, j = 0; i < houseData.length; i++) {
