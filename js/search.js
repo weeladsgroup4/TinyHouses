@@ -22,6 +22,12 @@ $(document).ready(()=> {
 		$('#price-container').children().toggle();
 		$('#size-container').children().toggle();
 	});
+
+	document.addEventListener('keydown', function(event) {
+		if(event.keyCode == 13) {
+			search();
+		}
+	});
 }) 
 
 priceOutput.innerHTML = priceSlider.value;

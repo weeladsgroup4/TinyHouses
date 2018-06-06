@@ -1,12 +1,15 @@
-$.get('components/lander.html', (data) => {
-	$('#content-container').empty().replaceWith(data);
-});
-$.get('components/navigation.html', (data) => {
-	$('#navigation-container').replaceWith(data);
-	$('#navigation-container').hide();
-});
+	$.get('components/lander.html', (data) => {
+		$('#content-container').empty().replaceWith(data);
+	});
+	
+	$.get('components/navigation.html', (data) => {
+		$('#navigation-container').replaceWith(data);
+		$('#navigation-container').hide();
+	});
 
 $(document).ready( () => {
+
+
 	$('#lander-search-button').on('click', () => {
 		$.get('components/search.html', (data) => {
 			$('#content-container').replaceWith(data);
