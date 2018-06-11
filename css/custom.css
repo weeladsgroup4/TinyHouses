@@ -51,8 +51,11 @@ p {
 .navbar {
 	padding: 40% 5% 1% 5%;
 	height: 0;
+	background-image: url('https://blog.claytonhomes.com/hubfs/Blog/ClaytonTinyHome_JeffreyDunganCollection_TheLowCountry_039.jpg?t=1527878232226');
+	background-repeat: no-repeat;
+	background-color: var(--background-color);
 	background-size: 100%;
-	background: var(--background-color) url('https://blog.claytonhomes.com/hubfs/Blog/ClaytonTinyHome_JeffreyDunganCollection_TheLowCountry_039.jpg?t=1527878232226') no-repeat 50% 60%;
+	background-position: 50% 60%;
 	font-family: Comfortaa, serif;
 }
 
@@ -139,10 +142,13 @@ p {
 }
 
 .lander-container {
+	background-image: url('https://media.treehugger.com/assets/images/2017/11/roadhaus-wedge-rv-wheelhaus-6a.jpg.860x0_q70_crop-scale.jpg');
+	background-repeat: no-repeat;
+	background-color: var(--background-color);
 	background-size: 100%;
 	height: 100vh;
 	width: 100%;
-	background: var(--background-color) url('https://media.treehugger.com/assets/images/2017/11/roadhaus-wedge-rv-wheelhaus-6a.jpg.860x0_q70_crop-scale.jpg') no-repeat 50% 50%;
+	background-position: 50% 50%;
 	font-family: Comfortaa, serif;
 }
 
@@ -158,19 +164,15 @@ p {
 .primary-button {
 	background-color: var(--dark-grey-color);
 }
-.primary-button:hover {
-	background-color: var(--blue-color);
-}
-.primary-button:active {
-	background-color: var(--light-grey-color);
-}
-
-#search-button {
+.search-button {
 	background-color: var(--panel-color);
 }
 
-#search-button:hover {
+.primary-button:hover, .search-button:hover {
 	background-color: var(--blue-color);
+}
+.primary-button:active, .search-button:active {
+	background-color: var(--light-grey-color);
 }
 
 #carousel-image-container {

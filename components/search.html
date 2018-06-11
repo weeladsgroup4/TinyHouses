@@ -8,7 +8,7 @@
 					<span>
 						<i class="fa fa-search"/>				
 						<input type="text" placeholder="search for city here" id="searchField">
-						<button id='search-button' onclick="search()">GO</button>
+						<button class='search-button' onclick="search()">GO</button>
 					</span>
 				</div>
 				<div class="col-sm-2">
@@ -19,7 +19,7 @@
 				</div>
 				<div class="col-sm-4 text-center">
 					<h4>
-						ONLY SEARCH BY CITY NAME
+						<label for="cityOnly">ONLY SEARCH BY CITY NAME</label>
 						<input type='checkbox' id="cityOnly">
 					</h4>
 				</div>
@@ -28,24 +28,24 @@
 			</div>
 			<div class="row row-padding options-container">
 				<div class="col-sm filter-options-selector">
-					<button class="btn btn-lg btn-block" id="search-button"><h4>SHOW MORE OPTIONS</h4></button>
+                    <button class="btn btn-lg btn-block search-button">SHOW MORE OPTIONS</button>
 				</div>
 				<div class="col-sm" id="price-container">
 					<h4>
-						MAX PRICE RANGE
+						<label for="priceSlider">MAX PRICE RANGE</label>
 					</h4>
 					<div class="price-slider-container">
-					  <input type="range" min="50" max="350" value="100" class="slider" id="priceSlider">
-					  <p><span class="fa fa-euro-sign"></span><span id="priceText"></span>,000</p>
+                        <input type="range" min="50" max="350" value="100" class="slider" id="priceSlider">
+					    <p><span class="fa fa-euro-sign"></span><span id="priceText"></span>,000</p>
 					</div>
 				</div>
 				<div class="col-sm" id="size-container">
 					<h4>
-						MAX SIZE
+						<label for="distanceSlider">MAX SIZE</label>
 					</h4>
 					<div class="distance-slider-container">
-					  <input type="range" min="1" max="250" value="25" class="slider" id="distanceSlider">
-					  <p><span id="distanceText"></span>m<sup>2</sup></p>
+						<input type="range" min="1" max="250" value="25" class="slider" id="distanceSlider">
+					    <p><span id="distanceText"></span>m<sup>2</sup></p>
 					</div>	
 				</div>
 			</div>
@@ -53,13 +53,13 @@
 				<div class="col-sm-2">
 				</div>
 				<div class="col-sm-4" id="innercity-toggle">
-					<button class="btn btn-lg btn-block" id="search-button">
-						<p>INCLUDE INNER CITY</p>
+					<button class="btn btn-lg btn-block search-button">
+						INCLUDE INNER CITY
 					</button>
 				</div>
 				<div class="col-sm-4" id="outercity-toggle">
-					<button class="btn btn-lg btn-block" id="search-button">	
-						<p>INCLUDE OUTER CITY</p>
+					<button class="btn btn-lg btn-block search-button">
+						INCLUDE OUTER CITY
 					</button>
 				</div>
 				<div class="col-sm-2">
