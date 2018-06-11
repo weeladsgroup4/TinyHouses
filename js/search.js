@@ -22,10 +22,10 @@ $(document).ready(()=> {
 	$('.filter-options-selector').on('click', () => {
 		if(showOptions) {
 			showOptions = false;
-			$('.filter-options-selector').html('<button class="btn btn-lg btn-block" id="search-button"><h4>SHOW MORE OPTIONS</h4></button>');
+			$('.filter-options-selector button').text("SHOW MORE OPTIONS");
 		} else {
 			showOptions = true;
-			$('.filter-options-selector').html('<button class="btn btn-lg btn-block" id="search-button"><h4>HIDE MORE OPTIONS</h4></button>');
+            $('.filter-options-selector button').text("HIDE MORE OPTIONS");
 		}
 		$('.filter-options').toggle();
 	});
@@ -33,20 +33,20 @@ $(document).ready(()=> {
 	$('#innercity-toggle').on('click', () => {
 		if(innerCity) {
 			innerCity = false;
-			$('#innercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>INCLUDE INNER CITY HOUSES</p></button>');
+            $('#innercity-toggle button').text('INCLUDE INNER CITY HOUSES');
 		} else {
 			innerCity = true;
-			$('#innercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>EXCLUDE INNER CITY HOUSES</p></button>');
+			$('#innercity-toggle button').text('EXCLUDE INNER CITY HOUSES');
 		}
 	});
 
 	$('#outercity-toggle').on('click', () => {
 		if(outerCity) {
 			outerCity = false;
-			$('#outercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>INCLUDE OUTER CITY HOUSES</p></button>');
+			$('#outercity-toggle button').text('INCLUDE OUTER CITY HOUSES');
 		} else {
 			outerCity = true;
-			$('#outercity-toggle').html('<button class="btn btn-lg btn-block" id="search-button"><p>EXCLUDE OUTER CITY HOUSES</p></button>');
+			$('#outercity-toggle button').text('EXCLUDE OUTER CITY HOUSES');
 		}
 	});
 
@@ -64,7 +64,7 @@ priceSlider.oninput = function() {
 	priceOutput.innerHTML = this.value;
 };
 
-distanceSlider.oninput = function() {
+sizeSlider.oninput = function() {
 	sizeOutput.innerHTML = this.value;
 };
 // type = false --innercity
@@ -72,10 +72,10 @@ distanceSlider.oninput = function() {
 function getHouses(size, price, location) {
 	$('.search-content-container').empty();
 	for (let i = 0, j = 0; i < houseData.length; i++) {
-		house = houseData[i];
-		city = house.city.toUpperCase();
-		checkCity = (location === '' || location === city);
-		checkSizePrice = (house.size <= size && house.price <= price);
+		let house = houseData[i];
+		let city = house.city.toUpperCase();
+		let checkCity = (location === '' || location === city);
+		let checkSizePrice = (house.size <= size && house.price <= price);
 		if ((checkSizePrice && checkCity) || (cityOnly && checkCity)) {
 			populateResults(house, j);
 			j++;
@@ -87,16 +87,39 @@ function getHouses(size, price, location) {
 }
 
 function search() {
-	searchInput = document.getElementById("searchField").value.toUpperCase();
-	size = sizeSlider.value;
-	price = priceSlider.value * 1000;
+	let searchInput = document.getElementById("searchField").value.toUpperCase();
+	let size = sizeSlider.value;
+	let price = priceSlider.value * 1000;
 	getHouses(size, price, searchInput);
 }	
 
 function populateResults(house, i) {
 	$('.search-content-container').append(
 		// ignore this line
-		'<div class="col col-sm-4"><img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid img-thumbnail"/><div class="row row-padding"><div class="col-sm-6"><p><span class="fa fa-map-pin"></span>'+house.city+'</p></div><div class="col-sm-6"><p>'+house.longitude + ', ' + house.latitude + '</p></div></div><div class="row row-padding"><div class="col-sm-6"><p><span class="fa fa-euro-sign"></span>'+house.price+'</p></div><div class="col-sm-6"><p>'+house.size+'m<sup>2</sup></p></div></div><div class="row row-padding"><div class="col-sm-12"><button type="button" class="btn btn-lg btn-block" id="primary-button">VIEW DETAILS</button></div></div></div>'	
+		'<div class="col col-sm-4">' +
+		'	<img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid img-thumbnail"/>' +
+		'	<div class="row row-padding">' +
+		'		<div class="col-sm-6">' +
+		'			<p><span class="fa fa-map-pin"></span>'+house.city+'</p>' +
+		'		</div>' +
+		'		<div class="col-sm-6">' +
+		'			<p>'+house.longitude + ', ' + house.latitude + '</p>' +
+		'		</div>' +
+		'	</div>' +
+		'	<div class="row row-padding">' +
+		'		<div class="col-sm-6">' +
+		'			<p><span class="fa fa-euro-sign"></span>'+house.price+'</p>' +
+		'		</div>' +
+		'		<div class="col-sm-6">' +
+		'			<p>'+house.size+'m<sup>2</sup></p>' +
+		'		</div>' +
+		'	</div>' +
+		'	<div class="row row-padding">' +
+		'		<div class="col-sm-12">' +
+		'			<button type="button" class="btn btn-lg btn-block primary-button">VIEW DETAILS</button>' +
+		'		</div>' +
+		'	</div>' +
+		'</div>'
 	);
 	if(i%3 === 0) {
 		$('.search-content-container').append('</div><div class="row row-padding>');
