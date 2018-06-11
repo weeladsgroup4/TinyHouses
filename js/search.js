@@ -22,10 +22,10 @@ $(document).ready(()=> {
 	$('.filter-options-selector').on('click', () => {
 		if(showOptions) {
 			showOptions = false;
-			$('.filter-options-selector').html('<button class="btn btn-lg btn-block search-button">SHOW MORE OPTIONS</button>');
+			$('.filter-options-selector button').text("SHOW MORE OPTIONS");
 		} else {
 			showOptions = true;
-			$('.filter-options-selector').html('<button class="btn btn-lg btn-block search-button">HIDE MORE OPTIONS</button>');
+            $('.filter-options-selector button').text("HIDE MORE OPTIONS");
 		}
 		$('.filter-options').toggle();
 	});
@@ -33,20 +33,20 @@ $(document).ready(()=> {
 	$('#innercity-toggle').on('click', () => {
 		if(innerCity) {
 			innerCity = false;
-			$('#innercity-toggle').html('<button class="btn btn-lg btn-block search-button"><p>INCLUDE INNER CITY HOUSES</p></button>');
+            $('#innercity-toggle button').text('INCLUDE INNER CITY HOUSES');
 		} else {
 			innerCity = true;
-			$('#innercity-toggle').html('<button class="btn btn-lg btn-block search-button"><p>EXCLUDE INNER CITY HOUSES</p></button>');
+			$('#innercity-toggle button').text('EXCLUDE INNER CITY HOUSES');
 		}
 	});
 
 	$('#outercity-toggle').on('click', () => {
 		if(outerCity) {
 			outerCity = false;
-			$('#outercity-toggle').html('<button class="btn btn-lg btn-block search-button"><p>INCLUDE OUTER CITY HOUSES</p></button>');
+			$('#outercity-toggle button').text('INCLUDE OUTER CITY HOUSES');
 		} else {
 			outerCity = true;
-			$('#outercity-toggle').html('<button class="btn btn-lg btn-block search-button"><p>EXCLUDE OUTER CITY HOUSES</p></button>');
+			$('#outercity-toggle button').text('EXCLUDE OUTER CITY HOUSES');
 		}
 	});
 
