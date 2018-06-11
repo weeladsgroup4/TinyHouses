@@ -1,24 +1,21 @@
-var houseData = '';
-var priceSlider = document.getElementById("priceSlider");
-var priceOutput = document.getElementById("priceText");
-var sizeSlider = document.getElementById("distanceSlider");
-var sizeOutput = document.getElementById("distanceText");
-var cityOnly, innerCity, outerCity, showOptions = false;
+houseData = '';
+priceSlider = document.getElementById("priceSlider");
+priceOutput = document.getElementById("priceText");
+sizeSlider = document.getElementById("distanceSlider");
+sizeOutput = document.getElementById("distanceText");
+showOptions = false;
 
 $(document).ready(()=> {
+
 	$.getJSON('assets/wee_mock_data.json', (data) => {
 		houseData = data;
-		for (var i = 0; i < houseData.length; i++) {
+		for (let i = 0; i < houseData.length; i++) {
 			populateResults(houseData[i], i);
 		}
 	});
 	$('.filter-options').hide();
 	$('input[type=checkbox]').on("click", ()=>{
-		if (cityOnly) {
-			cityOnly = false;
-		}  else {
-			cityOnly = true;
-		}
+        cityOnly = !cityOnly;
 		$('.options-container').children().toggle();
 	});
 
@@ -54,36 +51,36 @@ $(document).ready(()=> {
 	});
 
 	document.addEventListener('keydown', function(event) {
-		if(event.keyCode == 13) {
+		if(event.keyCode === 13) {
 			search();
 		}
 	});
-}) 
+});
 
 priceOutput.innerHTML = priceSlider.value;
 sizeOutput.innerHTML = sizeSlider.value;
 
 priceSlider.oninput = function() {
 	priceOutput.innerHTML = this.value;
-}
+};
 
 distanceSlider.oninput = function() {
 	sizeOutput.innerHTML = this.value;
-}	
+};
 // type = false --innercity
 // type = true --outercity
 function getHouses(size, price, location) {
 	$('.search-content-container').empty();
-	for (var i = 0, j = 0; i < houseData.length; i++) {
+	for (let i = 0, j = 0; i < houseData.length; i++) {
 		house = houseData[i];
 		city = house.city.toUpperCase();
-		checkCity = (location == '' || location == city);
+		checkCity = (location === '' || location === city);
 		checkSizePrice = (house.size <= size && house.price <= price);
 		if ((checkSizePrice && checkCity) || (cityOnly && checkCity)) {
 			populateResults(house, j);
 			j++;
 		}
-		if (i == houseData.length - 1 && j == 0) {
+		if (i === houseData.length - 1 && j === 0) {
 			$('.search-content-container').append('<div class="col-sm">No Tiny Houses Found :(</div>')
 		}					
 	}
@@ -101,7 +98,7 @@ function populateResults(house, i) {
 		// ignore this line
 		'<div class="col col-sm-4"><img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid img-thumbnail"/><div class="row row-padding"><div class="col-sm-6"><p><span class="fa fa-map-pin"></span>'+house.city+'</p></div><div class="col-sm-6"><p>'+house.longitude + ', ' + house.latitude + '</p></div></div><div class="row row-padding"><div class="col-sm-6"><p><span class="fa fa-euro-sign"></span>'+house.price+'</p></div><div class="col-sm-6"><p>'+house.size+'m<sup>2</sup></p></div></div><div class="row row-padding"><div class="col-sm-12"><button type="button" class="btn btn-lg btn-block" id="primary-button">VIEW DETAILS</button></div></div></div>'	
 	);
-	if(i%3 == 0) {
+	if(i%3 === 0) {
 		$('.search-content-container').append('</div><div class="row row-padding>');
 	} 
 }	

@@ -1,6 +1,8 @@
 @font-face {
 	font-family: Avenir;
-	src: url('../fonts/Averni-Light-07.ttf');
+	src: url('../fonts/Avenir-Light-07.ttf');
+}
+@font-face {
 	font-family: Comfortaa;
 	src: url('../fonts/Comfortaa-Regular.ttf');
 }
@@ -18,27 +20,27 @@ body {
 }
 
 h1 {
-	font-family: Comfortaa;
+	font-family: Comfortaa, serif;
 	font-size: 2.25em;
 }
 
 h2 {
-	font-family: Comfortaa;
+	font-family: Comfortaa, serif;
 	font-size: 1.9375em;
 }
 
 h3 {
-	font-family: Comfortaa;
+	font-family: Comfortaa, serif;
 	font-size:  1.625em; 
 }
 
 h4 {
-	font-family: Avenir !important;
+	font-family: Avenir, serif !important;
 	font-size: 1.3125em;
 }
 
 p {
-	font-family: Avenir;
+	font-family: Avenir, serif;
 	font-size: 1em;
 }
 
@@ -48,13 +50,10 @@ p {
 
 .navbar {
 	padding: 40% 5% 1% 5%;
-	height: 0vh;
-	background-image: url('https://blog.claytonhomes.com/hubfs/Blog/ClaytonTinyHome_JeffreyDunganCollection_TheLowCountry_039.jpg?t=1527878232226');
-	background-repeat: no-repeat;
-	background-color: var(--background-color);
+	height: 0;
 	background-size: 100%;
-	background-position: 50% 60%;
-	font-family: Comfortaa;
+	background: var(--background-color) url('https://blog.claytonhomes.com/hubfs/Blog/ClaytonTinyHome_JeffreyDunganCollection_TheLowCountry_039.jpg?t=1527878232226') no-repeat 50% 60%;
+	font-family: Comfortaa, serif;
 }
 
 .nav-item {
@@ -140,14 +139,11 @@ p {
 }
 
 .lander-container {
-	background-image: url('https://media.treehugger.com/assets/images/2017/11/roadhaus-wedge-rv-wheelhaus-6a.jpg.860x0_q70_crop-scale.jpg');
-	background-repeat: no-repeat;
-	background-color: var(--background-color);
 	background-size: 100%;
 	height: 100vh;
 	width: 100%;
-	background-position: 50% 50%;
-	font-family: Comfortaa;
+	background: var(--background-color) url('https://media.treehugger.com/assets/images/2017/11/roadhaus-wedge-rv-wheelhaus-6a.jpg.860x0_q70_crop-scale.jpg') no-repeat 50% 50%;
+	font-family: Comfortaa, serif;
 }
 
 .lander-div {
@@ -159,11 +155,14 @@ p {
 	background-color: rgba(256, 256, 256, 0.8);
 }
 
-#primary-button {
+.primary-button {
 	background-color: var(--dark-grey-color);
 }
-#primary-button:hover {
+.primary-button:hover {
 	background-color: var(--blue-color);
+}
+.primary-button:active {
+	background-color: var(--light-grey-color);
 }
 
 #search-button {
