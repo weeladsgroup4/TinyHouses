@@ -16,7 +16,7 @@
 }
 
 body {
-	background-color: var(--background-color);
+	background-color: var(--panel-color);
 }
 
 h1 {
@@ -295,6 +295,12 @@ p {
 	position: relative;
 	left: 0;
 	top: 0;
+}
+
+.inner-content-container {
+	margin: 1%;
+	padding: 5%;
+	background-color: var(--background-color);
 }
 
 .footer-content {
