@@ -78,16 +78,9 @@ $(document).ready( () => {
             scrollToContent();
         });
     });
-
-/*
-	$('#home-page').on('click', () => {
-		$.get('components/lander.html', (data) => {
-			$('#navigation-container').hide();
-			$('#content-container').replaceWith(data);
-		})
-		scrollToContent();
-	});
-*/
+    $.get('components/footer.html', (data) => {
+        $('#footer-container').replaceWith(data);
+    });
 
 });
 

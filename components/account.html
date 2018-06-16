@@ -100,25 +100,36 @@
 	</div>
 	<div class="container text-center account-container">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-2">
 			</div>
-			<div class="col-sm-6">
-				<h4 id="welcome-text"></h4>
+			<div class="col-sm-8" style="padding: 5%;">
+				<h2><i class="fa fa-user profile-icon"></i> Martin Jawahier’s User Page</h2>
 			</div>
-			<div class="col-sm-3">
-			</div>
-		</div>
-		<div class="row row-padding">
-			<div class="col-sm-3">
-			</div>
-			<div class="col-sm-6">
-				<button class="btn btn-block" onclick="logout()" id="primary-button">
-					LOG OUT
-				</button>
-			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-2">
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-5 profile-list">
+				<img src="/assets/pf.png" id="profile-image"/>
+				<ul>
+					<li><p><img src="/assets/forumposts.png"/>123 forum posts</p></li>
+					<li><p><img src="/assets/buildings_sold.png"/>12 tiny houses sold</p></li>
+					<li><p><img src="/assets/buildings_bought.png"/>3 tiny houses bought</p></li>
+					<li><button class="btn btn-block" onclick="logout()" id="primary-button">LOG OUT</button></li>
+				</ul>
+			</div>
+			<div class="col-sm-7 col-md-7 col-lg-7">
+				<ul class="profile-buttons">
+					<li><p>Browse history</p></li>
+					<li><p>Purchase history</p></li>
+					<li><p>Suggestions</p></li>
+					<li></li>
+				</ul>
+				<img src="/assets/profile-house.png">
+				<img src="/assets/profile-house.png">
+			</div>
+		</div>
+		
 	</div>
 	<script>
 		if (isLoggedIn)

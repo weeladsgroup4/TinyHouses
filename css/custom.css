@@ -94,12 +94,14 @@ p {
 	font-family: Comfortaa, serif;
 }
 
-.nav-item {
-	padding: -2%;
-}
 
 .nav-item h4 {
 	color: #333;
+}
+
+.center-navigation {
+	width: 10em;
+	text-align: center;
 }
 
 .navbar .nav-item:hover {
@@ -175,19 +177,17 @@ p {
 	width: 100%;
 }
 
-
-
-.primary-button {
-	background-color: var(--dark-grey-color);
+#primary-button {
+	background-color: var(--light-grey-color);
 }
 .search-button {
 	background-color: var(--panel-color);
 }
 
-.primary-button:hover, .search-button:hover {
+#primary-button:hover, .search-button:hover {
 	background-color: var(--primary-color);
 }
-.primary-button:active, .search-button:active {
+#primary-button:active, .search-button:active {
 	background-color: var(--light-grey-color);
 }
 
@@ -207,6 +207,10 @@ p {
 
 .fa-chevron-right, .fa-chevron-left {
 	color: var(--primary-color);
+}
+
+#profile-image {
+	border: 1em solid var(--primary-color);
 }
 
 .search-item-container:hover {
@@ -242,6 +246,7 @@ p {
 	background-color: var(--primary-color);
 	border-radius: 50%;
 }
+
 .toggle-btn.active {
 	background: var(--background-color);
 }
@@ -258,3 +263,40 @@ p {
 #searchField {
 	width: 80%;
 } 
+
+.profile-list li {
+	padding: 5%;
+	text-align: left;
+	list-style-type: none;
+}
+
+.profile-buttons {
+	width: 100%;
+	color: white;
+}
+
+.profile-icon {
+	color: var(--primary-color);
+}
+
+.profile-buttons li {
+	display: inline-block;
+	background-color: var(--light-grey-color);
+	width: 30%;
+	min-height: 50%;
+}
+
+.profile-buttons li:hover {
+	background-color: var(--primary-color);
+	cursor: pointer;
+}
+
+.browse-history {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.footer-content {
+	background-color: var(--light-grey-color);
+}
