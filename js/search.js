@@ -13,48 +13,6 @@ $(document).ready(()=> {
 			populateResults(houseData[i], i);
 		}
 	});
-	$('.filter-options').hide();
-	$('input[type=checkbox]').on("click", ()=>{
-        cityOnly = !cityOnly;
-		$('.options-container').children().toggle();
-	});
-
-	$('.filter-options-selector').on('click', () => {
-		if(showOptions) {
-			showOptions = false;
-			$('.filter-options-selector button').text("SHOW MORE OPTIONS");
-		} else {
-			showOptions = true;
-            $('.filter-options-selector button').text("HIDE MORE OPTIONS");
-		}
-		$('.filter-options').toggle();
-	});
-
-	$('#innercity-toggle').on('click', () => {
-		if(innerCity) {
-			innerCity = false;
-            $('#innercity-toggle button').text('INCLUDE INNER CITY HOUSES');
-		} else {
-			innerCity = true;
-			$('#innercity-toggle button').text('EXCLUDE INNER CITY HOUSES');
-		}
-	});
-
-	$('#outercity-toggle').on('click', () => {
-		if(outerCity) {
-			outerCity = false;
-			$('#outercity-toggle button').text('INCLUDE OUTER CITY HOUSES');
-		} else {
-			outerCity = true;
-			$('#outercity-toggle button').text('EXCLUDE OUTER CITY HOUSES');
-		}
-	});
-
-	document.addEventListener('keydown', function(event) {
-		if(event.keyCode === 13) {
-			search();
-		}
-	});
 
 	$('#search-options-toggler').on("click", () => {
 		if (showOptions) {
@@ -83,7 +41,6 @@ $(document).ready(()=> {
 			search();
 		}
 	});
-
 });
 
 priceOutput.innerHTML = priceSlider.value;
@@ -125,30 +82,6 @@ function search() {
 
 function populateResults(house, i) {
 	$('.search-content-container').append(
-		// ignore this line
-		'<div class="col col-sm-4">' +
-		'	<img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid img-thumbnail"/>' +
-		'	<div class="row row-padding">' +
-		'		<div class="col-sm-6">' +
-		'			<p><span class="fa fa-map-pin"></span>'+house.city+'</p>' +
-		'		</div>' +
-		'		<div class="col-sm-6">' +
-		'			<p>'+house.longitude + ', ' + house.latitude + '</p>' +
-		'		</div>' +
-		'	</div>' +
-		'	<div class="row row-padding">' +
-		'		<div class="col-sm-6">' +
-		'			<p><span class="fa fa-euro-sign"></span>'+house.price+'</p>' +
-		'		</div>' +
-		'		<div class="col-sm-6">' +
-		'			<p>'+house.size+'m<sup>2</sup></p>' +
-		'		</div>' +
-		'	</div>' +
-		'	<div class="row row-padding">' +
-		'		<div class="col-sm-12">' +
-		'			<button type="button" class="btn btn-lg btn-block primary-button">VIEW DETAILS</button>' +
-		'		</div>' +
-		'	</div>' +
 		'<div class="col col-sm-4 search-item-container">' +
 		'	<img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid"/>' +
 		'	<div class="row row-padding">' +

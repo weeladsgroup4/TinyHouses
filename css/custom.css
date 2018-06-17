@@ -178,17 +178,6 @@ p {
 	width: 100%;
 }
 
-<<<<<<< HEAD
-.lander-container {
-	background-image: url('https://media.treehugger.com/assets/images/2017/11/roadhaus-wedge-rv-wheelhaus-6a.jpg.860x0_q70_crop-scale.jpg');
-	background-repeat: no-repeat;
-	background-color: var(--background-color);
-	background-size: 100%;
-	height: 100vh;
-	width: 100%;
-	background-position: 50% 50%;
-	font-family: Comfortaa, serif;
-=======
 #primary-button {
 	background-color: var(--light-grey-color);
 }
@@ -211,54 +200,23 @@ p {
 #carousel-image {
 	width: 100%;
 	height: 100%;
->>>>>>> mock_tryout
 }
 
 .carousel-caption {
 	background-color: rgba(100,149,237, 0.5);
 }
 
-<<<<<<< HEAD
-.primary-button {
-	background-color: var(--dark-grey-color);
-}
-.search-button {
-	background-color: var(--panel-color);
-}
-
-.primary-button:hover, .search-button:hover {
-	background-color: var(--blue-color);
-=======
 .fa-chevron-right, .fa-chevron-left {
 	color: var(--primary-color);
 }
 
 #profile-image {
 	border: 1em solid var(--primary-color);
->>>>>>> mock_tryout
 }
 .primary-button:active, .search-button:active {
 	background-color: var(--light-grey-color);
 }
 
-<<<<<<< HEAD
-#carousel-image-container {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#carousel-image {
-	width: 100%;
-	height: 100%;
-}
-
-.carousel-caption {
-	background-color: rgba(100,149,237, 0.5);
-}
-
-.fa-chevron-right, .fa-chevron-left {
-	color: var(--blue-color);
-=======
 .search-item-container:hover {
 	margin-bottom: 1em;
 	transform: scale(1.05);
@@ -300,7 +258,6 @@ p {
 .toggle-btn.active > .toggle-thumb {
  	-webkit-transform: translateX(1.625em);
   	transform: translateX(1.625em);
->>>>>>> mock_tryout
 }
 
 #content-container {
@@ -309,10 +266,7 @@ p {
 
 #searchField {
 	width: 80%;
-<<<<<<< HEAD
-} 
-=======
-} 
+}
 
 .profile-list li {
 	padding: 5%;
@@ -356,4 +310,3 @@ p {
 .footer-content {
 	background-color: var(--light-grey-color);
 }
->>>>>>> mock_tryout
