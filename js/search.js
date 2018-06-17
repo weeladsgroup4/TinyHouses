@@ -55,6 +55,35 @@ $(document).ready(()=> {
 			search();
 		}
 	});
+
+	$('#search-options-toggler').on("click", () => {
+		if (showOptions) {
+			showOptions = false;
+			$('.toggle-btn').addClass('active');
+			$('#search-options-text').html('<p>HIDE ADDITIONAL SEARCH OPTIONS</p>');
+		} else {
+			showOptions = true;
+			$('.toggle-btn').removeClass('active');
+			$('#search-options-text').html('<p>SHOW ADDITIONAL SEARCH OPTIONS</p>');
+		}
+		$('.options-container').children().slideToggle(500);
+
+		$('.filter-options-selector').on('click', () => {
+			if(showOptions) {
+				showOptions = false;
+			} else {
+				showOptions = true;
+			}
+			$('.filter-options').toggle();
+		});
+	});
+
+	document.addEventListener('keydown', function(event) {
+		if(event.keyCode === 13) {
+			search();
+		}
+	});
+
 });
 
 priceOutput.innerHTML = priceSlider.value;
@@ -84,6 +113,7 @@ function getHouses(size, price, location) {
 			$('.search-content-container').append('<div class="col-sm">No Tiny Houses Found :(</div>')
 		}					
 	}
+
 }
 
 function search() {
@@ -117,6 +147,22 @@ function populateResults(house, i) {
 		'	<div class="row row-padding">' +
 		'		<div class="col-sm-12">' +
 		'			<button type="button" class="btn btn-lg btn-block primary-button">VIEW DETAILS</button>' +
+		'		</div>' +
+		'	</div>' +
+		'<div class="col col-sm-4 search-item-container">' +
+		'	<img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid"/>' +
+		'	<div class="row row-padding">' +
+		'		<div class="col-sm-1">' +
+		'			<i class="fa fa-map-pin"></i>' +
+		'		</div>' +
+		'		<div class="col-sm-4">' +
+		'			<p>'+house.city+'</p>' +
+		'		</div>' +
+		'		<div class="col-sm-4">' +
+		'			<p><span class="fa fa-euro-sign"></span>'+house.price+'</p>' +
+		'		</div>' +
+		'		<div class="col-sm-2">' +
+		'			<p>'+house.size+'m<sup>2</sup></p>' +
 		'		</div>' +
 		'	</div>' +
 		'</div>'

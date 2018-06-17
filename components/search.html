@@ -1,73 +1,74 @@
 <div id="content-container">
 	<div class="container text-center">
-		<div class="search-options-container">
-			<div class="row row-padding">
-				<div class="col-sm-2">
+		<div class="search-options-container inner-content-container">
+			<div class="row text-center row-padding">
+				<div class="col-sm-1">
 				</div>
-				<div class="col-sm-8">
+				<div class="col-sm-10">
+					<h3>Find <i>your</i> Tiny House here!</h3>
+				</div>
+				<div class="col-sm-1">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">
+				</div>
+				<div class="col-sm-10">
 					<span>
 						<i class="fa fa-search"/>				
 						<input type="text" placeholder="search for city here" id="searchField">
 						<button class='search-button' onclick="search()">GO</button>
 					</span>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-1">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-2">
 				</div>
-				<div class="col-sm-4 text-center">
-					<h4>
-						<label for="cityOnly">ONLY SEARCH BY CITY NAME</label>
-						<input type='checkbox' id="cityOnly">
-					</h4>
+				<div class="col-sm-7 text-center" id="search-options-text">
+					<p>HIDE ADDITIONAL SEARCH OPTIONS</p>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-1">
+					<div class="switch" id="search-options-toggler">
+						<div class="toggle-btn active">
+							<div class="toggle-thumb"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
 				</div>
 			</div>
-			<div class="row row-padding options-container">
-				<div class="col-sm filter-options-selector">
-                    <button class="btn btn-lg btn-block search-button">SHOW MORE OPTIONS</button>
+			<div class="row options-container">
+				<div class="col-sm-1">
 				</div>
-				<div class="col-sm" id="price-container">
-					<h4>
+				<div class="col-sm-5" id="price-container">
+					<p>
 						<label for="priceSlider">MAX PRICE RANGE</label>
-					</h4>
+					</p>
 					<div class="price-slider-container">
                         <input type="range" min="50" max="350" value="100" class="slider" id="priceSlider">
 					    <p><span class="fa fa-euro-sign"></span><span id="priceText"></span>,000</p>
 					</div>
 				</div>
-				<div class="col-sm" id="size-container">
-					<h4>
+				<div class="col-sm-5" id="size-container">
+					<p>
 						<label for="distanceSlider">MAX SIZE</label>
-					</h4>
+					</p>
 					<div class="distance-slider-container">
 						<input type="range" min="1" max="250" value="25" class="slider" id="distanceSlider">
 					    <p><span id="distanceText"></span>m<sup>2</sup></p>
 					</div>	
 				</div>
+				<div class="col-sm-1">
+				</div>
 			</div>
 			<div class="row filter-options options-container">
-				<div class="col-sm-2">
-				</div>
-				<div class="col-sm-4" id="innercity-toggle">
-					<button class="btn btn-lg btn-block search-button">
-						INCLUDE INNER CITY
-					</button>
-				</div>
-				<div class="col-sm-4" id="outercity-toggle">
-					<button class="btn btn-lg btn-block search-button">
-						INCLUDE OUTER CITY
-					</button>
-				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-4">
 				</div>
 			</div>
  		</div>
- 		<div class="row row-padding search-content-container">
-
+ 		<div class="row row-padding search-content-container inner-content-container">
 		</div>	
 	</div>
 	<script src="js/search.js">
