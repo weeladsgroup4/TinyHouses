@@ -67,7 +67,7 @@ citySlider.oninput = function() {
 		else {
 			$('#search-title').css({color: '#333'});
 		}
-		outercityvalue = ((50 - this.value) * -2)*0.01 -0.02;
+		outercityvalue = ((50 - this.value) * -2)*0.01 - 0.02;
 		console.log(outercityvalue);
 		$('#image-outercity').css({opacity: outercityvalue});
 	} else if (this.value < 49) {

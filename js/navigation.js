@@ -4,26 +4,27 @@ $(document).ready( () => {
     $.get('components/lander.html', (data) => {
         $('#lander-container').replaceWith(data);
         $('#lander-container').on('click', () => {
-            console.log("loading search");
-            $.get('components/search.html', (data) => {
-                $('#content-container').replaceWith(data);
-                $('#search-page').addClass('active');
-                $('html, body').animate({scrollTop: $('#content-container').offset().top -50}, 2000);
-            });
-        });
-
-        $('#lander-login-button').on('click', () => {
-            console.log("loading login");
-            $.get('components/account.html', (data) => {
-                $('#content-container').replaceWith(data);
-                $('#content-container').hide();
-            });
-            $('#navigation-container').slideDown(1500, () => {
-                $('#content-container').show();
-                scrollToContent();
-            });
+            $('html, body').animate({scrollTop: $('#second-lander-container').offset().top -0}, 2000);
         });
     });
+    $.get('components/second-lander.html', (data) => {
+        $('#second-lander-container').replaceWith(data);
+
+        $('#second-lander-buy').on('click', () => {
+            $.get('components/search.html', (data) => {
+                $('#content-container').replaceWith(data);
+                $('#search-page').addClass('active').siblings().removeClass('active'); 
+            })
+            $('html, body').animate({scrollTop: $('#content-container').offset().top -20}, 2000);          
+        });
+        $('#second-lander-sell').on('click', () => {
+            $.get('components/account.html', (data) => {
+                $('#content-container').replaceWith(data);
+                $('#account-page').addClass('active').siblings().removeClass('active');
+            })
+            $('html, body').animate({scrollTop: $('#content-container').offset().top -20}, 2000);
+        });
+    })
 
     // Load navigation bar content first, then assign handles to contents
     $.get('components/navigation.html', (data) => {
@@ -33,16 +34,14 @@ $(document).ready( () => {
                 $('#content-container').replaceWith(data);
             });
             scrollToContent();
-            $('#search-page').addClass('active');
-            $('#search-page').siblings().removeClass('active');
+            $('#search-page').addClass('active').siblings().removeClass('active');
         });
         $('#info-page').on('click', () => {
             $.get('components/info.html', (data) => {
                 $('#content-container').replaceWith(data);
             });
             scrollToContent();
-            $('#info-page').addClass('active');
-            $('#info-page').siblings().removeClass('active');
+            $('#info-page').addClass('active').siblings().removeClass('active');
         });
 
         $('#contact-page').on('click', () => {
@@ -50,8 +49,7 @@ $(document).ready( () => {
                 $('#content-container').replaceWith(data);
             });
             scrollToContent();
-            $('#contact-page').addClass('active');
-            $('#contact-page').siblings().removeClass('active');
+            $('#contact-page').addClass('active').siblings().removeClass('active');
         });
 
         $('#about-page').on('click', () => {
@@ -59,8 +57,7 @@ $(document).ready( () => {
                 $('#content-container').replaceWith(data);
             });
             scrollToContent();
-            $('#about-page').addClass('active');
-            $('#about-page').siblings().removeClass('active');
+            $('#about-page').addClass('active').siblings().removeClass('active');;
         });
 
         $('#account-page').on('click', () => {

@@ -69,6 +69,55 @@ p {
 	margin: auto;
 }
 
+#second-lander-container {
+	height: 100vh;
+	width: 100vw;
+}
+
+.second-lander-content {
+	padding: 2%;
+	margin: 1%;
+	text-align: left;
+	background-color: var(--background-color);
+}
+
+.second-lander-title {
+	padding: 5%;
+	margin-top: 2.3%;
+	background-color: var(--background-color);
+}
+.second-lander-list {
+	list-style-type: none;
+}
+
+.second-lander-segment {
+	background-color: var(--background-color);
+	width: 35%;
+	margin: 4%;
+}
+
+.second-lander-button {
+	color: white;
+	margin: 50% 0% 10% 0%;
+	padding: 5%;
+	background-color: var(--light-grey-color);
+}
+.second-lander-button:hover {
+	background-color: var(--primary-color);
+}
+
+
+#second-lander-img {
+	margin-top: 60%;
+}
+
+.second-lander-aboutus {
+	margin-top: 10%;
+	cursor: pointer;
+	text-align: center;
+	color: var(--primary-color);
+}
+
 .fa-chevron-circle-down {
 	margin-top: 20%;
 	color: var(--primary-color);
@@ -135,10 +184,6 @@ p {
 	padding: 5% 2%;
 }
 
-.account-container {
-	background-color: var(--background-color);
-	display: none;
-}
 
 .account-input-field {
 	width: 90%;
@@ -211,10 +256,16 @@ p {
 }
 
 #profile-image {
+	margin-bottom: 5%;
 	border: 1em solid var(--primary-color);
 }
 .primary-button:active, .search-button:active {
 	background-color: var(--light-grey-color);
+}
+.logout-button {
+	width: 80%;
+	margin-top: 10%;
+	padding: 2%;
 }
 
 .search-item-container:hover {
@@ -269,7 +320,7 @@ p {
 }
 
 .profile-list li {
-	padding: 5%;
+	padding-left: 5%;
 	text-align: left;
 	list-style-type: none;
 }
@@ -293,13 +344,17 @@ p {
 	display: inline-block;
 	background-color: var(--light-grey-color);
 	width: 30%;
-	min-height: 50%;
 }
 
 .profile-buttons li:hover {
 	background-color: var(--primary-color);
 	cursor: pointer;
 }
+
+.profile-buttons li:first-child {
+	background-color: var(--primary-color);
+}
+
 
 .browse-history {
 	position: relative;
@@ -355,7 +410,7 @@ p {
 	width: 100%;
 }
 
-#about-logo {
+#resize-logo {
 	width: 10em;
 }
 
