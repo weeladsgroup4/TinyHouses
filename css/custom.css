@@ -324,6 +324,7 @@ p {
 
 .contact-container ul {
 	margin: auto;
+	display: block;
 	list-style-type: none;
 }
 .contact-container a {
@@ -348,4 +349,23 @@ p {
 .business-model-canvas img {
 	width: 100%;
 	height: 100%;
+}
+
+.about-imgs img {
+	width: 100%;
+}
+
+#about-logo {
+	width: 10em;
+}
+
+.info-bottom {
+	padding: 5%;
+	margin: auto;
+	cursor: pointer;
+	color: var(--primary-color);
+}
+.info-bottom:hover {
+	color: white;
+	background-color: var(--primary-color);
 }
