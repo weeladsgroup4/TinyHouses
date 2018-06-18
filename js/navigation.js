@@ -15,14 +15,21 @@ $(document).ready( () => {
                 $('#content-container').replaceWith(data);
                 $('#search-page').addClass('active').siblings().removeClass('active'); 
             })
-            $('html, body').animate({scrollTop: $('#content-container').offset().top -20}, 2000);          
+            $('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 2000);          
         });
         $('#second-lander-sell').on('click', () => {
             $.get('components/account.html', (data) => {
                 $('#content-container').replaceWith(data);
                 $('#account-page').addClass('active').siblings().removeClass('active');
             })
-            $('html, body').animate({scrollTop: $('#content-container').offset().top -20}, 2000);
+            $('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 2000);
+        });
+        $('#second-lander-about').on('click', ()=> {
+            $.get('components/about.html', (data) => {
+                $('#content-container').replaceWith(data);
+                $('#about-page').addClass('active').siblings().removeClass('active');
+            })
+            $('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 2000);
         });
     })
 
@@ -53,6 +60,7 @@ $(document).ready( () => {
         });
 
         $('#about-page').on('click', () => {
+            console.log('clicked about page');
             $.get('components/about.html', (data) => {
                 $('#content-container').replaceWith(data);
             });
