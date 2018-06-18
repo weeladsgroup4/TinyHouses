@@ -369,3 +369,24 @@ p {
 	color: white;
 	background-color: var(--primary-color);
 }
+.inner-outer-images {
+	position: relative;
+	height: 40vh;
+}
+
+#image-innercity {
+	position: absolute;
+	top: -22%;
+	left: -4%;
+	height: 100%;
+	width: 108%;
+	opacity: 0.0;
+}
+#image-outercity {
+	position: absolute;
+	top: -22%;
+	left: -4%;
+	height: 100%;
+	width: 108%;
+	opacity: 0.0;
+}

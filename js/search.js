@@ -3,6 +3,8 @@ priceSlider = document.getElementById("priceSlider");
 priceOutput = document.getElementById("priceText");
 sizeSlider = document.getElementById("distanceSlider");
 sizeOutput = document.getElementById("distanceText");
+citySlider = document.getElementById("citySlider");
+citySliderOutput = document.getElementById("citySliderText");
 showOptions = false;
 
 $(document).ready(()=> {
@@ -45,6 +47,7 @@ $(document).ready(()=> {
 
 priceOutput.innerHTML = priceSlider.value;
 sizeOutput.innerHTML = sizeSlider.value;
+citySliderOutput.innerHTML = citySlider.value;
 
 priceSlider.oninput = function() {
 	priceOutput.innerHTML = this.value;
@@ -53,8 +56,35 @@ priceSlider.oninput = function() {
 sizeSlider.oninput = function() {
 	sizeOutput.innerHTML = this.value;
 };
-// type = false --innercity
-// type = true --outercity
+
+citySlider.oninput = function() {
+	citySliderOutput.innerHTML = this.value;
+	if (this.value > 51) {
+		$('#image-innercity').css({opacity: 0});
+		if (this.value > 80) {
+			$('#search-title').css({color: '#eee'});
+		}
+		else {
+			$('#search-title').css({color: '#333'});
+		}
+		outercityvalue = ((50 - this.value) * -2)*0.01 -0.02;
+		console.log(outercityvalue);
+		$('#image-outercity').css({opacity: outercityvalue});
+	} else if (this.value < 49) {
+		$('#image-outercity').css({opacity: 0});
+		if (this.value < 20) {
+			$('#search-title').css({color: '#eee'});
+		} else {
+			$('#search-title').css({color: '#333'});
+		}
+		innercityvalue = (100 - this.value * 2)*0.01 - 0.02;
+		console.log(innercityvalue);
+		$('#image-innercity').css({opacity: innercityvalue});
+	} else {
+		$('#search-title').css({color: '#333'});
+	}
+}
+
 function getHouses(size, price, location) {
 	$('.search-content-container').empty();
 	for (let i = 0, j = 0; i < houseData.length; i++) {

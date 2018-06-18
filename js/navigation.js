@@ -84,6 +84,6 @@ $(document).ready( () => {
 
 function scrollToContent()
 {
-	$('html, body').animate({scrollTop: $('#content-container').offset().top -50}, 1000);
+	$('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 1000);
 }
 
