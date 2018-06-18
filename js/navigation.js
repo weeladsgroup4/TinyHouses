@@ -12,16 +12,18 @@ $(document).ready( () => {
 
         $('#second-lander-buy').on('click', () => {
             $.get('components/search.html', (data) => {
-                $('#content-container').replaceWith(data);
-                $('#search-page').addClass('active').siblings().removeClass('active'); 
-            })
+                $.get('components/details.modal.html', (data2) => {
+                    $('#content-container').replaceWith(data + data2);
+                    $('#search-page').addClass('active').siblings().removeClass('active');
+                });
+            });
             $('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 2000);          
         });
         $('#second-lander-sell').on('click', () => {
             $.get('components/account.html', (data) => {
                 $('#content-container').replaceWith(data);
                 $('#account-page').addClass('active').siblings().removeClass('active');
-            })
+            });
             $('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 2000);
         });
         $('#second-lander-about').on('click', ()=> {
@@ -31,14 +33,16 @@ $(document).ready( () => {
             })
             $('html, body').animate({scrollTop: $('#content-container').offset().top -100}, 2000);
         });
-    })
+    });
 
     // Load navigation bar content first, then assign handles to contents
     $.get('components/navigation.html', (data) => {
         $('#navigation-container').replaceWith(data);
         $('#search-page').on('click', () => {
             $.get('components/search.html', (data) => {
-                $('#content-container').replaceWith(data);
+                $.get('components/details.modal.html', (data2) => {
+                    $('#content-container').replaceWith(data + data2);
+                });
             });
             scrollToContent();
             $('#search-page').addClass('active').siblings().removeClass('active');

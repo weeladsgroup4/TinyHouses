@@ -7,6 +7,7 @@ let sizeOutput;// = document.getElementById("distanceText");
 let citySlider;
 let citySliderOutput;
 let cityOnly, innerCity, outerCity, showOptions, allOptions = false;
+let lastHouseID;
 
 // Login script variables
 let isLoggedIn;

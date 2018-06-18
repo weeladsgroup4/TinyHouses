@@ -112,20 +112,20 @@ function search() {
 
 function populateResults(house, i) {
 	$('.search-content-container').append(
-		'<div class="col col-sm-4 search-item-container">' +
+		'<div class="col col-sm-4 search-item-container" onclick="triggerDetailModal(this)" data-toggle="modal" data-target="#detailModal" data-house-id="' + i + '">' +
 		'	<img src="https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/macy-miller-tiny-house-2.jpg?itok=ySmiqYLu" class="img-fluid"/>' +
 		'	<div class="row row-padding">' +
 		'		<div class="col-sm-1">' +
 		'			<i class="fa fa-map-pin"></i>' +
 		'		</div>' +
 		'		<div class="col-sm-4">' +
-		'			<p>'+house.city+'</p>' +
+		'			<p class="house-location">'+house.city+'</p>' +
 		'		</div>' +
 		'		<div class="col-sm-4">' +
-		'			<p><span class="fa fa-euro-sign"></span>'+house.price+'</p>' +
+		'			<p class="house-price"><span class="fa fa-euro-sign"></span>'+house.price+'</p>' +
 		'		</div>' +
 		'		<div class="col-sm-2">' +
-		'			<p>'+house.size+'m<sup>2</sup></p>' +
+		'			<p class="house-price">'+house.size+'m<sup>2</sup></p>' +
 		'		</div>' +
 		'	</div>' +
 		'</div>'
@@ -133,4 +133,22 @@ function populateResults(house, i) {
 	if(i%3 === 0) {
 		$('.search-content-container').append('</div><div class="row row-padding>');
 	} 
-}	
+}
+
+function triggerDetailModal(elm) {
+    lastHouseID = $(elm).data("houseId");
+    $("#detailModal").modal('show');
+}
+
+$('#detailModal').on('show.bs.modal', function (event) {
+    let house = houseData[lastHouseID]; // Button that triggered the modal
+    let title = "Tiny House in " + house.city;
+    console.log(house);
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    let modal = $(this);
+    modal.find('.modal-title').text(title);
+    modal.find('#detail-house-price').text(house.price);
+    modal.find('#detail-house-size').text(house.size);
+
+});
